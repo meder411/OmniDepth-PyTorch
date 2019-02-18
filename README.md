@@ -1,4 +1,4 @@
-# Omnidepth-PyTorch
+# OmniDepth-PyTorch
 A PyTorch reimplementation of the Omnidepth paper from Zioulis et al., ECCV 2018:
 
 **Notable difference with the paper:** PyTorch's weight decay for the Adam solver does not seem to function the same way as Caffe's. Hence, I do not use weight decay in training. Instead, I use a learning rate schedule
