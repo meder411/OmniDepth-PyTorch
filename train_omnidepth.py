@@ -52,7 +52,7 @@ elif network_type == 'RectNet':
 	alpha_list = [0.535, 0.272]
 	beta_list = [0.134, 0.068,]
 else:
-	assert True, 'Unsupported network type'
+	assert False, 'Unsupported network type'
 
 # Make the checkpoint directory
 mkdirs(checkpoint_dir)
