@@ -16,9 +16,9 @@ import os.path as osp
 # --------------
 network_type = 'UResNet' # 'RectNet' or 'UResNet'
 experiment_name = 'omnidepth'
-input_dir = '/data/meder-ppde/omnidepth/datasets'
-train_file_list = '/data/meder-ppde/omnidepth/original_train_split.txt'
-val_file_list = '/data/meder-ppde/omnidepth/original_test_split.txt'
+input_dir = '' # Dataset location
+train_file_list = '' # File with list of training files
+val_file_list = '' # File with list of validation files
 checkpoint_dir = osp.join('experiments', experiment_name)
 checkpoint_path = None
 checkpoint_path = osp.join(checkpoint_dir, 'checkpoint_latest.pth')
