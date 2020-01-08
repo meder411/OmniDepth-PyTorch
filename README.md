@@ -13,6 +13,7 @@ A PyTorch reimplementation of the Omnidepth paper from Zioulis et al., ECCV 2018
 
  The easiest way to get set up is to just [set up a conda environment](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-from-an-environment-yml-file) using the *omnidepth.yml* file in this repository.
 
+**Note:** The OpenEXR dependency can be problematic to get set up. I've found that if the `pip` version isn't working, installing via `sudo apt install openexr` often solves the problem when using Ubuntu.
 
 # Cloning the network
 Once you've installed and activated the conda environment, you should clone the network. You can do that with:
