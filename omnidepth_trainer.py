@@ -93,8 +93,6 @@ class OmniDepthTrainer(object):
 
 		# Some timers
 		self.batch_time_meter = AverageMeter()
-		self.forward_time_meter = AverageMeter()
-		self.backward_time_meter = AverageMeter()
 
 		# Some trackers
 		self.epoch = 0
@@ -154,17 +152,14 @@ class OmniDepthTrainer(object):
 			inputs, gt, other = self.parse_data(data)
 
 			# Run a forward pass
-			forward_time = time.time()
 			output = self.forward_pass(inputs)
-			self.forward_time_meter.update(time.time() - forward_time)
 
 			# Compute the loss(es)
 			loss = self.compute_loss(output, gt)
+			self.loss.update(loss, output[0].shape[0])
 
 			# Backpropagation of the total loss
-			backward_time = time.time()
 			self.backward_pass(loss)
-			self.backward_time_meter.update(time.time() - backward_time)
 
 			# Update batch times
 			self.batch_time_meter.update(time.time() - end)
@@ -528,15 +523,11 @@ class OmniDepthTrainer(object):
 		'''
 		print('Epoch: [{0}][{1}/{2}]\t'
 			'Batch Time {batch_time.val:.3f} ({batch_time.avg:.3f})\n'
-			'Forward Time {forward_time.val:.3f} ({forward_time.avg:.3f})\t'
-			'Backward Time {backward_time.val:.3f} ({backward_time.avg:.3f})\n'
 			'Loss {loss.val:.4f} ({loss.avg:.4f})\n\n'.format(
 			self.epoch+1, 
 			batch_num+1,
 			len(self.train_dataloader), 
 			batch_time=self.batch_time_meter,
-			forward_time=self.forward_time_meter, 
-			backward_time=self.backward_time_meter, 
 			loss=self.loss))
 
 	def print_validation_report(self):
