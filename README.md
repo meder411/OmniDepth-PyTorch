@@ -18,7 +18,7 @@ A PyTorch reimplementation of the Omnidepth paper from Zioulis et al., ECCV 2018
 Once you've installed and activated the conda environment, you should clone the network. You can do that with:
 
 ```
-git clone git@github.com:meder411/omnidepth-pytorch.git
+git clone https://github.com/meder411/OmniDepth-PyTorch.git
 ```
 
 
