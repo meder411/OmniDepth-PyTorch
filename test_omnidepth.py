@@ -11,13 +11,13 @@ import os.path as osp
 # --------------
 # PARAMETERS
 # --------------
-network_type = 'UResNet' # 'RectNet' or 'UResNet'
+network_type = 'RectNet' # 'RectNet' or 'UResNet'
 experiment_name = 'omnidepth'
 input_dir = '' # Dataset location
 val_file_list = '' # List of evaluation files
 checkpoint_dir = osp.join('experiments', experiment_name)
-checkpoint_path = None
-checkpoint_path = osp.join(checkpoint_dir, 'checkpoint_latest.pth')
+checkpoint_path = 'rectnet.pth'
+# checkpoint_path = osp.join(checkpoint_dir, 'checkpoint_latest.pth')
 num_workers = 4
 validation_sample_freq = -1
 device_ids = [0,1,2,3]
