@@ -1,9 +1,6 @@
 # OmniDepth-PyTorch
 A PyTorch reimplementation of the Omnidepth paper from Zioulis et al., ECCV 2018:
 
-**Notable difference with the paper:** PyTorch's weight decay for the Adam solver does not seem to function the same way as Caffe's. Hence, I do not use weight decay in training. Instead, I use a learning rate schedule
-
-
 # Dependencies
  - PyTorch 1.0+
  - numpy (various things)
@@ -30,6 +27,21 @@ To get the OmniDepth dataset, please file a request with the authors [here](http
 # Usage
 Run `python train_omnidepth.py` to run the training routine. Run `python test_omnidepth.py` to run the evaluation routine. You can edit the parameters in those files.
 
+## Testing
+Included is a PyTorch version of the Caffe model for the top RectNet model from the original paper. If you have set everything up correctly, running `test_omnidepth.py` should run the evaluation script on this model and output the following results:
+
+```
+  Avg. Abs. Rel. Error: 0.0641
+  Avg. Sq. Rel. Error: 0.0197
+  Avg. Lin. RMS Error: 0.2297
+  Avg. Log RMS Error: 0.0993
+  Inlier D1: 0.9663
+  Inlier D2: 0.9951
+  Inlier D3: 0.9984
+```
+
+## Training
+
 During training, you first need to start the visdom server in order to visualize training. It's best to do this in a [`screen`](https://www.gnu.org/software/screen/manual/screen.html). To start the visdom server just call `visdom`.
 
 The visualizations can be viewed at `localhost:8097`. If running visdom and the network on a server, you will need to tunnel to the server to view it locally. For example:
@@ -39,6 +51,8 @@ ssh -N -L 8888:localhost:8097 <username>@<server-ip>
 ```
 
 allows you to view the training visualizations at localhost:8888 on your machine.
+
+**Notable difference with the paper:** PyTorch's weight decay for the Adam solver does not seem to function the same way as Caffe's. Hence, I do not use weight decay in training. Instead, I use a learning rate schedule, but I have not been able to match the Caffe results.
 
 
 # Credit
