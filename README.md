@@ -28,7 +28,7 @@ To get the OmniDepth dataset, please file a request with the authors [here](http
 Run `python train_omnidepth.py` to run the training routine. Run `python test_omnidepth.py` to run the evaluation routine. You can edit the parameters in those files.
 
 ## Testing
-Included is a PyTorch version of the Caffe model for the top RectNet model from the original paper. If you have set everything up correctly, running `test_omnidepth.py` should run the evaluation script on this model and output the following results:
+Included is `rectnet.pth`, a PyTorch model converted from the released Caffe model for the top RectNet model from the original paper. If you have set everything up correctly, running `test_omnidepth.py` will run the evaluation script on this model and output the following results:
 
 ```
   Avg. Abs. Rel. Error: 0.0641
