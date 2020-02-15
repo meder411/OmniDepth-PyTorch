@@ -2,11 +2,11 @@
 A PyTorch reimplementation of the Omnidepth paper from Zioulis et al., ECCV 2018:
 
 # Dependencies
- - PyTorch 1.0+
- - numpy (various things)
- - scikit-image (for data loading)
- - OpenEXR (for loading depth files)
- - visdom (for visualizations)
+ - PyTorch 1.0+ (choose the right install command [here](https://pytorch.org/))
+ - numpy (`pip install numpy` or `conda install -c anaconda numpy`)
+ - scikit-image (`pip install scikit-image` or `conda install -c conda-forge scikit-image`)
+ - OpenEXR (`pip install openexr`, don't use the conda one, it never works. See note below if you have trouble.)
+ - visdom (`pip install visdom`)
 
  The easiest way to get set up is to just [set up a conda environment](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-from-an-environment-yml-file) using the *omnidepth.yml* file in this repository.
 
