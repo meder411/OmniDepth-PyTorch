@@ -13,7 +13,7 @@ A PyTorch reimplementation of the Omnidepth paper from Zioulis et al., ECCV 2018
 **Note:** The OpenEXR dependency can be problematic to get set up. I've found that if the `pip` version isn't working right away, you should try installing the OpenEXR dev library first:
 
 ```
-sudo apt install libopenexr-dev,
+sudo apt install libopenexr-dev
 pip install openexr
 ```
 
